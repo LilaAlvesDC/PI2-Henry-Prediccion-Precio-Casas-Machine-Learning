@@ -10,7 +10,7 @@ Una importante empresa inversora dentro del rubro de la inmobiliaria en Colombia
 
 ### Recolección de datos 
 ___
-​Se proveen los archivos dentro del archivo comprimido 'properties_colombia.zip':
+Se proveen los archivos dentro del archivo comprimido 'properties_colombia.zip':
 
 'properties_colombia_train.csv': Contiene 197549 registros y 26 dimensiones, el cual incluye la información numérica del precio.
 'propiedades_colombia_test.csv': Contiene 65850 registros y 25 dimensiones, el cual no incluye la información del precio.
@@ -53,7 +53,7 @@ Existen dos corrientes de aplicación de NPL, la clásica y la conocida como Dee
 [![NPL](https://www.xenonstack.com/hs-fs/hubfs/deep-learning-nlp-applications.png?width=1280&name=deep-learning-nlp-applications.png "NPL")](https://www.xenonstack.com/hs-fs/hubfs/deep-learning-nlp-applications.png?width=1280&name=deep-learning-nlp-applications.png "NPL")
 
 # Importación y Limpieza de datos
-
+___
 En esta etapa importamos los dataset y analizamos su contenido. Había una gran proporción de datos nulos en los datos, salvo en las columnas 'title' y 'description' por esta razón, el proceso de limpieza se concentró en estas columnas. 
 
 ![enter image description here](https://github.com/LilaAlvesDC/P2-Prediccion-Precio-Casas-Machine-Learning/blob/main/_str/datos_nulos_train.JPG)
@@ -64,7 +64,7 @@ El proceso consistió en
 3. Eliminar las filas que tuvieran datos nulos en la columna 'price'
 
 ## Eliminar outliers 
-
+___
 Para eliminar los outliers o valores atípicos extrajimos los datos dentro del rango intercuartílico de percentil 10. Como sigue: 
 
     Q1, Q2  =  percentile(dataset['price'], 10), percentile(dataset['price'], 90)
@@ -89,7 +89,7 @@ Los outliers identificados y removidos representaron el 0.0282 % de los datos, l
 
 
 ## Crear columna 'target'
-
+___
 Luego de unificar la divisa en que estaban expresados los precios, resolvimos calcular el precio promedio de las propiedades para crear la columna 'target'. 
 
 La columna target etiqueta nuestra propiedades como cara o barata, asignando 1 o 0, respectivamente, tomando como referencia el precio promedio de las propiedades, de la siguiente manera:  
@@ -106,7 +106,7 @@ Finalmente los datos de entrenamiento están distribuídos de la siguiente maner
 ![enter image description here](https://github.com/LilaAlvesDC/P2-Prediccion-Precio-Casas-Machine-Learning/blob/main/_str/Distribuci%C3%B3n%20de%20los%20datos%20.png?raw=true)
 
 # Vectorización 
-
+___
 A continuación, vectorizamos el vocabulario de nuestros datos, este proceso consiste en asignar un índice a cada palabra y luego un índice a cada fila de datos, para construir la matriz de dispersión que posteriormente usaremos para entrenar nuestro modelo. 
 
 Se utilizan las funciones CountVectorizer() para vectorizar y transform() para crear la matriz dispersión. 
@@ -114,6 +114,23 @@ Se utilizan las funciones CountVectorizer() para vectorizar y transform() para c
     cv_tranformer  =  CountVectorizer(analyzer=text_processing).fit(data['text'])
 
     bolsa_palabras  =  cv_tranformer.transform(data['text'])
-    
+ 
+# TF - IDF 
+---
+(del inglés _Term frequency – Inverse document frequency_) frecuencia de término – frecuencia inversa de documento (o sea, la frecuencia de ocurrencia del término en la colección de documentos), es una medida numérica que expresa cuán relevante es una palabra para un documento en una colección.
+
+    tfidf_transformer  =  TfidfTransformer().fit(bolsa_palabras(data))
+
+***Tf-idf*** es el producto de dos medidas, frecuencia de término y frecuencia inversa de documento. Se calcula cómo: 
+
+![{\displaystyle \mathrm {tfidf} (t,d,D)=\mathrm {tf} (t,d)\times \mathrm {idf} (t,D)}](https://wikimedia.org/api/rest_v1/media/math/render/svg/d1893056bff41c7829cf3023a5febda10f43e555)
+
+donde la *frecuencia de término*:
+
+![{\displaystyle \mathrm {tf} (t,d)={\frac {\mathrm {f} (t,d)}{\max\{\mathrm {f} (t,d):t\in d\}}}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/3dd393fdbc9da383600763f2308b7338ab1e080c)
+
+y la *frecuencia inversa de documento* es:
+
+![{\displaystyle \mathrm {idf} (t,D)=\log {\frac {|D|}{|\{d\in D:t\in d\}|}}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/cc5cc57e5b68902a0bfaf42f04e53458503601c4)
 
 [Repositorio original de consigna](https://github.com/soyHenry/Datathon "Repositorio de consigna")
