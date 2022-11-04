@@ -6,7 +6,7 @@ El Procesamiento del Lenguaje Natural (NLP por sus siglas en inglés) es el camp
 
 ### Definición del proyecto
 ___
-Una importante empresa inversora dentro del rubro de la inmobiliaria en Colombia, nos pide implementar un modelo de clasificación que permita clasificar el precio de las propiedades en venta, utilizando los datos que se han puesto a su disposición correspondientes al año 2020. ​Para esto, específicamente, debemos predecir la categorización de las propiedades entre baratas o caras, considerando como criterio el valor promedio de los precios (la media).​
+Una importante empresa inversora dentro del rubro de la inmobiliaria en Colombia, nos pide implementar un modelo de clasificación que permita clasificar el precio de las propiedades en venta, utilizando los datos que se han puesto a su disposición correspondientes al año 2020. Para esto, específicamente, debemos predecir la categorización de las propiedades entre baratas o caras, considerando como criterio el valor promedio de los precios (la media).
 
 ### Recolección de datos 
 ___
@@ -127,13 +127,25 @@ Se utilizan las funciones CountVectorizer() para vectorizar y transform() para c
 
 $$[{\displaystyle \mathrm {tfidf} (t,d,D)=\mathrm {tf} (t,d)\times \mathrm {idf} (t,D)}]$$
 
-donde la *frecuencia de término*:
+donde la *frecuencia de término* es:
 
 $$[{\displaystyle \mathrm {tf} (t,d)={\frac {\mathrm {f} (t,d)}{\max\{\mathrm {f} (t,d):t\in d\}}}}]$$
 
 y la *frecuencia inversa de documento* es:
 
 $$[{\displaystyle \mathrm {idf} (t,D)=\log {\frac {|D|}{|\{d\in D:t\in d\}|}}}]$$
+
+## Entrenamiento del modelo 
+
+Escogimos dos modelos de clasificación para predecir, estos son el *Modelo Naive Bayes* y el modelo *Gradiente Descendente Estocástico para Clasificación*. 
+
+El *Modelo Naive Bayes* se basa en el teorema de Naive Bayes, donde se asume que laque las variables predictoras son independientes entre sí. En otras palabras, que la presencia de una cierta característica en un conjunto de datos no está en absoluto relacionada con la presencia de cualquier otra característica.
+
+La fórmula del teorema de Bayes es: 
+
+$$ [{\displaystyle P(A_{i}|B)={\frac {P(B|A_{i})P(A_{i})}{P(B)}}}] $$
+
+El *Gradiente Descendente Estocástico para Clasificación*  implementa una rutina de aprendizaje de descenso de gradiente estocástico simple que admite diferentes funciones de pérdida y penalizaciones para la clasificación. la función SGDClassifier admite la clasificación de clases múltiples mediante la combinación de varios clasificadores binarios en un esquema de "uno contra todos" (OVA).
 
 
 [Repositorio original de consigna](https://github.com/soyHenry/Datathon "Repositorio de consigna")
