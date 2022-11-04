@@ -125,15 +125,15 @@ Se utilizan las funciones CountVectorizer() para vectorizar y transform() para c
 ***Tf-idf*** es el producto de dos medidas, frecuencia de término y frecuencia inversa de documento. Se calcula cómo: 
 
 
-$$[{\displaystyle \mathrm {tfidf} (t,d,D)=\mathrm {tf} (t,d)\times \mathrm {idf} (t,D)}]$$
+$${\displaystyle \mathrm {tfidf} (t,d,D)=\mathrm {tf} (t,d)\times \mathrm {idf} (t,D)}$$
 
 donde la *frecuencia de término* es:
 
-$$[{\displaystyle \mathrm {tf} (t,d)={\frac {\mathrm {f} (t,d)}{\max\{\mathrm {f} (t,d):t\in d\}}}}]$$
+$${\displaystyle \mathrm {tf} (t,d)={\frac {\mathrm {f} (t,d)}{\max\{\mathrm {f} (t,d):t\in d\}}}}$$
 
 y la *frecuencia inversa de documento* es:
 
-$$[{\displaystyle \mathrm {idf} (t,D)=\log {\frac {|D|}{|\{d\in D:t\in d\}|}}}]$$
+$${\displaystyle \mathrm {idf} (t,D)=\log {\frac {|D|}{|\{d\in D:t\in d\}|}}}$$
 
 ## Entrenamiento del modelo 
 
@@ -143,7 +143,7 @@ El *Modelo Naive Bayes* se basa en el teorema de Naive Bayes, donde se asume que
 
 La fórmula del teorema de Bayes es: 
 
-$$ [{\displaystyle P(A_{i}|B)={\frac {P(B|A_{i})P(A_{i})}{P(B)}}}] $$
+$$ {\displaystyle P(A_{i}|B)={\frac {P(B|A_{i})P(A_{i})}{P(B)}}} $$
 
 El *Gradiente Descendente Estocástico para Clasificación*  implementa una rutina de aprendizaje de descenso de gradiente estocástico simple que admite diferentes funciones de pérdida y penalizaciones para la clasificación. la función SGDClassifier admite la clasificación de clases múltiples mediante la combinación de varios clasificadores binarios en un esquema de "uno contra todos" (OVA).
 
