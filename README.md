@@ -1,6 +1,6 @@
-### Modelo de predicción de precio de propiedades mediante análsis de Lenguaje Natural (NPL)
+### Modelo de predicción de precio de propiedades mediante análsis de Lenguaje Natural (NLP)
 
-### NPL 
+### NLP 
 ___
 El Procesamiento del Lenguaje Natural (NLP por sus siglas en inglés) es el campo de estudio que se enfoca en la comprensión mediante ordenador del lenguaje humano. 
 
