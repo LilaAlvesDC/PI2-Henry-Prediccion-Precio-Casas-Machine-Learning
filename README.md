@@ -77,9 +77,28 @@ y el límite superior
 
 $$ q \gt  Q_1  -  1.5 * IQR $$
 
+Los valores de la columnas 'price' antes de remover los outliers 
+
+![enter image description here](https://github.com/LilaAlvesDC/P2-Prediccion-Precio-Casas-Machine-Learning/blob/main/_str/Con_outliers.png?raw=true)
+
 Los valores de la columnas 'price' después de remover de los outliers 
 
 ![enter image description here](https://github.com/LilaAlvesDC/P2-Prediccion-Precio-Casas-Machine-Learning/blob/main/_str/Sin_outliers.png?raw=true)
 
+Los outliers identificados y removidos representaron el 0.0282 % de los datos, luego considerando los datos nulos, fueron descartados 2.85 % de los datos proporcionados. 
 
+
+## Crear columna 'target'
+
+Luego de unificar la divisa en que estaban expresados los precios, resolvimos calcular el precio promedio de las propiedades para crear la columna 'target'. 
+
+La columna target etiqueta nuestra propiedades como cara o barata, asignando 1 o 0, respectivamente, tomando como referencia el precio promedio de las propiedades, de la siguiente manera:  
+
+    dataset['target'] =  0
+    
+    for  i  in  range(len(dataset['price'])):
+	    precio  =  dataset.loc[i, 'price']
+		    if  precio  >=  precio_promedio:
+			    dataset.loc[i, 'target'] =  1
+                
 [Repositorio original de consigna](https://github.com/soyHenry/Datathon "Repositorio de consigna")
