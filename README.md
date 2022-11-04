@@ -100,5 +100,9 @@ La columna target etiqueta nuestra propiedades como cara o barata, asignando 1 o
 	    precio  =  dataset.loc[i, 'price']
 		    if  precio  >=  precio_promedio:
 			    dataset.loc[i, 'target'] =  1
-                
+
+Finalmente los datos de entrenamiento están distribuídos de la siguiente manera: 
+
+![enter image description here](https://github.com/LilaAlvesDC/P2-Prediccion-Precio-Casas-Machine-Learning/blob/main/_str/Distribuci%C3%B3n%20de%20los%20datos%20.png?raw=true)
+
 [Repositorio original de consigna](https://github.com/soyHenry/Datathon "Repositorio de consigna")
