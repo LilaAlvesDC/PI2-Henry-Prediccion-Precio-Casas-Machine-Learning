@@ -4,6 +4,10 @@
 ___
 El Procesamiento del Lenguaje Natural (NLP por sus siglas en inglés) es el campo de estudio que se enfoca en la comprensión mediante ordenador del lenguaje humano. 
 
+![enter image description here](https://miro.medium.com/max/997/1*jawjUxVmzZFZm3i_qgGpXg.png)
+
+
+
 ### Definición del proyecto
 ___
 Una importante empresa inversora dentro del rubro de la inmobiliaria en Colombia, nos pide implementar un modelo de clasificación que permita clasificar el precio de las propiedades en venta, utilizando los datos que se han puesto a su disposición correspondientes al año 2020. Para esto, específicamente, debemos predecir la categorización de las propiedades entre baratas o caras, considerando como criterio el valor promedio de los precios (la media).
