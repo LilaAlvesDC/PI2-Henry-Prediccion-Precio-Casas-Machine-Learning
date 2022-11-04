@@ -52,4 +52,34 @@ Existen dos corrientes de aplicación de NPL, la clásica y la conocida como Dee
 
 [![NPL](https://www.xenonstack.com/hs-fs/hubfs/deep-learning-nlp-applications.png?width=1280&name=deep-learning-nlp-applications.png "NPL")](https://www.xenonstack.com/hs-fs/hubfs/deep-learning-nlp-applications.png?width=1280&name=deep-learning-nlp-applications.png "NPL")
 
+# Importación y Limpieza de datos
+
+En esta etapa importamos los dataset y analizamos su contenido. Había una gran proporción de datos nulos en los datos, salvo en las columnas 'title' y 'description' por esta razón, el proceso de limpieza se concentró en estas columnas. 
+
+![enter image description here](https://github.com/LilaAlvesDC/P2-Prediccion-Precio-Casas-Machine-Learning/blob/main/_str/datos_nulos_train.JPG)
+
+El proceso consistió en 
+1. Convertir los precios expresados en USD a COP
+2. Concatenar las columnas 'title' y 'description' en una sola llamada 'text'
+3. Eliminar las filas que tuvieran datos nulos en la columna 'price'
+
+## Eliminar outliers 
+
+Para eliminar los outliers o valores atípicos extrajimos los datos dentro del rango intercuartílico de percentil 10. Como sigue: 
+
+    Q1, Q2  =  percentile(dataset['price'], 10), percentile(dataset['price'], 90)
+
+Determinamos el límite inferior: 
+
+$$ q \lt  Q_1  -  1.5 * IQR $$
+
+y el límite superior
+
+$$ q \gt  Q_1  -  1.5 * IQR $$
+
+Los valores de la columnas 'price' después de remover de los outliers 
+
+![enter image description here](https://github.com/LilaAlvesDC/P2-Prediccion-Precio-Casas-Machine-Learning/blob/main/_str/Sin_outliers.png?raw=true)
+
+
 [Repositorio original de consigna](https://github.com/soyHenry/Datathon "Repositorio de consigna")
