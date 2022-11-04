@@ -1,4 +1,4 @@
-### Modelo de predicción de precio de propiedades mediante análsis de Lenguaje Natural (NLP)
+### Modelo de predicción de precio de propiedades mediante el Procesamiento de Lenguaje Natural (NLP)
 
 ### NLP 
 ___
