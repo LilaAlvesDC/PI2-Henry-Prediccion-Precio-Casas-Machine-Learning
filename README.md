@@ -105,4 +105,15 @@ Finalmente los datos de entrenamiento están distribuídos de la siguiente maner
 
 ![enter image description here](https://github.com/LilaAlvesDC/P2-Prediccion-Precio-Casas-Machine-Learning/blob/main/_str/Distribuci%C3%B3n%20de%20los%20datos%20.png?raw=true)
 
+# Vectorización 
+
+A continuación, vectorizamos el vocabulario de nuestros datos, este proceso consiste en asignar un índice a cada palabra y luego un índice a cada fila de datos, para construir la matriz de dispersión que posteriormente usaremos para entrenar nuestro modelo. 
+
+Se utilizan las funciones CountVectorizer() para vectorizar y transform() para crear la matriz dispersión. 
+
+    cv_tranformer  =  CountVectorizer(analyzer=text_processing).fit(data['text'])
+
+    bolsa_palabras  =  cv_tranformer.transform(data['text'])
+    
+
 [Repositorio original de consigna](https://github.com/soyHenry/Datathon "Repositorio de consigna")
