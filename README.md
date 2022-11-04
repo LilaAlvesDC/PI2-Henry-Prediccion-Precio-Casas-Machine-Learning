@@ -115,11 +115,6 @@ Se utilizan las funciones CountVectorizer() para vectorizar y transform() para c
 
     bolsa_palabras  =  cv_tranformer.transform(data['text'])
  
-# TF - IDF 
----
-(del inglés _Term frequency – Inverse document frequency_) frecuencia de término – frecuencia inversa de documento (o sea, la frecuencia de ocurrencia del término en la colección de documentos), es una medida numérica que expresa cuán relevante es una palabra para un documento en una colección.
-
-    tfidf_transformer  =  TfidfTransformer().fit(bolsa_palabras(data))
 
 # TF - IDF 
 ---
