@@ -121,16 +121,23 @@ Se utilizan las funciones CountVectorizer() para vectorizar y transform() para c
 
     tfidf_transformer  =  TfidfTransformer().fit(bolsa_palabras(data))
 
+# TF - IDF 
+---
+(del inglés _Term frequency – Inverse document frequency_) frecuencia de término – frecuencia inversa de documento (o sea, la frecuencia de ocurrencia del término en la colección de documentos), es una medida numérica que expresa cuán relevante es una palabra para un documento en una colección.
+
+    tfidf_transformer  =  TfidfTransformer().fit(bolsa_palabras(data))
+
 ***Tf-idf*** es el producto de dos medidas, frecuencia de término y frecuencia inversa de documento. Se calcula cómo: 
 
-![{\displaystyle \mathrm {tfidf} (t,d,D)=\mathrm {tf} (t,d)\times \mathrm {idf} (t,D)}](https://wikimedia.org/api/rest_v1/media/math/render/svg/d1893056bff41c7829cf3023a5febda10f43e555)
+$$[{\displaystyle \mathrm {tfidf} (t,d,D)=\mathrm {tf} (t,d)\times \mathrm {idf} (t,D)}]$$
 
 donde la *frecuencia de término*:
 
-![{\displaystyle \mathrm {tf} (t,d)={\frac {\mathrm {f} (t,d)}{\max\{\mathrm {f} (t,d):t\in d\}}}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/3dd393fdbc9da383600763f2308b7338ab1e080c)
+$$[{\displaystyle \mathrm {tf} (t,d)={\frac {\mathrm {f} (t,d)}{\max\{\mathrm {f} (t,d):t\in d\}}}}]$$
 
 y la *frecuencia inversa de documento* es:
 
-![{\displaystyle \mathrm {idf} (t,D)=\log {\frac {|D|}{|\{d\in D:t\in d\}|}}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/cc5cc57e5b68902a0bfaf42f04e53458503601c4)
+$$[{\displaystyle \mathrm {idf} (t,D)=\log {\frac {|D|}{|\{d\in D:t\in d\}|}}}]$$
+
 
 [Repositorio original de consigna](https://github.com/soyHenry/Datathon "Repositorio de consigna")
