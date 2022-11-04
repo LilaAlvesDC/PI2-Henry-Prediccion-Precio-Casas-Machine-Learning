@@ -52,6 +52,4 @@ Existen dos corrientes de aplicación de NPL, la clásica y la conocida como Dee
 
 [![NPL](https://www.xenonstack.com/hs-fs/hubfs/deep-learning-nlp-applications.png?width=1280&name=deep-learning-nlp-applications.png "NPL")](https://www.xenonstack.com/hs-fs/hubfs/deep-learning-nlp-applications.png?width=1280&name=deep-learning-nlp-applications.png "NPL")
 
-En caso que se desee aplicar otro modelo de clasificación se sugiere emplear NPL del texto para imputar los datos faltantes en las columnas del dataset. 
-
 [Repositorio original de consigna](https://github.com/soyHenry/Datathon "Repositorio de consigna")
