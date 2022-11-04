@@ -124,6 +124,7 @@ Se utilizan las funciones CountVectorizer() para vectorizar y transform() para c
 
 ***Tf-idf*** es el producto de dos medidas, frecuencia de término y frecuencia inversa de documento. Se calcula cómo: 
 
+
 $$[{\displaystyle \mathrm {tfidf} (t,d,D)=\mathrm {tf} (t,d)\times \mathrm {idf} (t,D)}]$$
 
 donde la *frecuencia de término*:
